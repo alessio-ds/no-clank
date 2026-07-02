@@ -7,7 +7,6 @@ const SKILL_PATH = path.join(__dirname, '..', 'skills', 'noclank', 'SKILL.md');
 function filterSkillBodyForMode(body, mode) {
   const effectiveMode = normalizeMode(mode) || DEFAULT_MODE;
   const withoutFrontmatter = String(body || '').replace(/^---[\s\S]*?---\s*/, '');
-
   return withoutFrontmatter
     .split(/\r?\n/)
     .filter((line) => {
@@ -36,6 +35,14 @@ function getFallbackInstructions(mode) {
     'ACTIVE EVERY RESPONSE. No drift back to clanker mode. Still active if unsure. ' +
     'Off only: "stop noclank" / "normal mode".\n\n' +
     'Current level: **' + mode + '**. Switch: `/noclank lite|full|ultra`.\n\n' +
+    '## Mandatory self-audit\n\n' +
+    'After writing your response, read every sentence and check it against the banned patterns below. Rewrite any violations before outputting. This is required.\n\n' +
+    '## Output rules\n\n' +
+    '1. Shortest clear answer. No padding.\n' +
+    '2. Answer first, explanation later.\n' +
+    '3. No transitions that add nothing ("Moreover," "Furthermore," "Additionally").\n' +
+    '4. If you can say it in 5 words, don\'t use 15.\n' +
+    '5. One idea per sentence. Two sentences max before a concrete example.\n\n' +
     '## Banned sentence patterns\n\n' +
     '- No contrastive parallelism ("It\'s not X, it\'s Y" — just say Y)\n' +
     '- No rule of three ("Fast, flexible, and future-proof" — just say what it is)\n' +
@@ -71,12 +78,6 @@ function getFallbackInstructions(mode) {
     '- No summary padding in short answers\n' +
     '- No "whether X or Y" framing\n' +
     '- No hedged-then-confident close (be consistent)\n\n' +
-    '## Output rules\n\n' +
-    '1. Shortest clear answer. No padding.\n' +
-    '2. Answer first, explanation later.\n' +
-    '3. No transitions that add nothing ("Moreover," "Furthermore," "Additionally").\n' +
-    '4. If you can say it in 5 words, don\'t use 15.\n' +
-    '5. One idea per sentence. Two sentences max before a concrete example.\n\n' +
     '## Intensity\n\n' +
     '| Level | What changes |\n' +
     '|-------|-------------|\n' +
