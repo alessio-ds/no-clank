@@ -1,6 +1,6 @@
 {
   "name": "@alessiods/noclank",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Kills AI-generated clankerspeech slop. Forces plain, direct, human-sounding prose.",
   "keywords": [
     "opencode-plugin",
