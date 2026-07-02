@@ -1,0 +1,12 @@
+{
+  "name": "noclank",
+  "description": "Kills AI-generated clankerspeech slop. Forces plain, direct, human-sounding prose.",
+  "repository": "https://github.com/alessio-ds/no-clank",
+  "skills": ["skills/noclank/SKILL.md"],
+  "commands": {
+    "noclank": {
+      "description": "Set noclank intensity level (lite/full/ultra/off)",
+      "template": "Switch to noclank $ARGUMENTS mode. No-clank rules active: no em dashes, no AI vocabulary tics, no contrastive parallelism, no grandiose framing, no hedges. Write like a human."
+    }
+  }
+}

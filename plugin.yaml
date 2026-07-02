@@ -1,0 +1,7 @@
+name: noclank
+description: Kill AI-generated clankerspeech slop. No em dashes, no "delve", no contrastive parallelism, no grandiose framing.
+repository: https://github.com/alessio-ds/no-clank
+hooks:
+  - hooks/claude-codex-hooks.json
+skills:
+  - skills/noclank/SKILL.md
