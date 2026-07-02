@@ -130,7 +130,7 @@ The `./` path resolves against your project's `opencode.json`; to share one chec
 ### Pi agent harness
 
 ```
-pi install git:github.com/no-clank
+pi install git:github.com/alessio-ds/no-clank
 ```
 
 ### Gemini CLI / Antigravity CLI
