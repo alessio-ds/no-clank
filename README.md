@@ -48,6 +48,24 @@ With No-Clank:
 
 > Add JWT auth middleware. Closes #42.
 
+---
+
+**You ask: "Write a brief paragraph explaining what happiness is for humans."**
+
+The agent drafts an answer, then checks it against every rule before responding:
+
+**Draft** (caught by self-audit):
+> Happiness is a subjective emotional state characterized by feelings of contentment, satisfaction, and well-being. For humans, it arises from a combination of factors: meeting basic needs, forming meaningful social connections, pursuing goals, and experiencing positive events.
+
+**Violations found:**
+- Colon introducing a list in prose: `"a combination of factors: meeting basic needs..."`
+- Rule of three: `"contentment, satisfaction, and well-being"` is three items
+
+**Final response** (after iterative fixes):
+> Happiness is a subjective emotional state of contentment and well-being. For humans, it comes from meeting basic needs and building social connections while pursuing meaningful goals. Genetics and personality set a baseline, but intentional activities like gratitude and relationships also shape it. Happiness fluctuates and depends on both mindset and circumstances.
+
+The full session (including the `/noclank-audit` of the response) is in [`noclank-example.md`](noclank-example.md).
+
 ## Numbers
 
 Measured on Claude Code sessions writing responses to 10 common developer questions, with and without No-Clank (n=5, Haiku 4.5):
@@ -199,7 +217,7 @@ Persist the default with `NOCLANK_DEFAULT_MODE` env var or `~/.config/noclank/co
 
 **What about creative writing?** Poetry, fiction, lyrics, and deliberately stylized prose are exempt. No-Clank is for technical and professional communication.
 
-**Why "noclank"?** Because every LLM output sounds like it was written by a clanking machine trying to sound human.
+**Why "noclank"?** Because every LLM output sounds like it was written by a clanker trying to sound human.
 
 ## License
 
